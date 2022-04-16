@@ -64,17 +64,24 @@ chime.endpoint = new AWS.Endpoint(
 // });
 
 async function createMetting() {
-  const meeting = await chime
-    .createMeeting({
-      ClientRequestToken: uuidv4(),
-    })
-    .promise()
-    .then((meeting) => {
-      console.log("Meeting Created Successfully!!", meeting);
-    })
-    .catch((err) => {
-      console.log("error in creating meeting: ", err);
-    });
+  // const meeting = await chime
+  //   .createMeeting({
+  //     ClientRequestToken: uuidv4(),
+  //   })
+  //   .promise()
+  //   .then((meeting) => {
+  //     console.log("Meeting Created Successfully!!", meeting);
+  //   })
+  //   .catch((err) => {
+  //     console.log("error in creating meeting: ", err);
+  //   });
+
+  var chimesdkmessaging = new AWS.ChimeSDKMessaging();
+  console.log("chimesdkmessaging", chimesdkmessaging);
+  // chimesdkmessaging.associateChannelFlow(params, function (err, data) {
+  //   if (err) console.log(err, err.stack); // an error occurred
+  //   else console.log(data); // successful response
+  // });
 
   // console.log("meeting created: ", meeting);
 }
